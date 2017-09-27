@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS Tutorials</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+
+		<h1>Looping through lists</h1>
+		<ul>
+			<li v-for="(character, index) in characters">{{ index }} - {{ character }}</li>
+		</ul>
+		<ul>
+			<li v-for="(got, index) in gots">{{index}} . {{ got.name }} of house {{ got.house }}.</li>
+		</ul>
+
+		<template v-for="(got, index) in gots">
+			<h3>{{ index }} - {{ got.name }}</h3>
+			<p>Of house {{ got.house }}</p>
+		</template>
+		<h1>Game of Thrones Characters</h1>
+		<template v-for="got in gots">
+			<div v-for="(val, key) in got">
+				<p>This is the {{ key }}: {{ val }}</p>
+			</div>
+			<hr>
+		</template>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
